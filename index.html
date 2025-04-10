@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editor de Texto con GitHub</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+   <!-- PWA Metadata -->
+   <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#3498db">
+
+  <!-- iOS Support -->
+  <link rel="apple-touch-icon" href="/icons/icon-192.png">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+
+   <!-- Windows Metro -->
+   <meta name="msapplication-TileImage" content="/icons/icon-192.png">
+    <meta name="msapplication-TileColor" content="#3498db">
+   </head>
+<body>
+    <div class="container">
+        <h1>Editor de Texto Simple</h1>
+        
+        <div class="controls">
+            <input type="text" id="filename" placeholder="nombre-del-archivo" value="documento">
+            <select id="filetype">
+                <option value="txt">.txt</option>
+                <option value="pdf">.pdf</option>
+                <option value="md">.md</option>
+                <option value="html">.html</option>
+                <option value="json">.json</option>
+                <option value="csv">.csv</option>
+            </select>
+            
+            <button id="download-btn">Descargar</button>
+            <button id="github-btn">Subir a GitHub</button>
+        </div>
+        
+        <textarea id="editor" placeholder="Escribe tu texto aquí..."></textarea>
+        
+        <div class="github-settings" id="github-settings">
+            <h3>Configuración de GitHub</h3>
+            <input type="text" id="repo-owner" placeholder="Nombre de usuario/organización">
+            <input type="text" id="repo-name" placeholder="Nombre del repositorio">
+            <input type="text" id="repo-path" placeholder="Ruta en el repositorio (ej: docs/)">
+            <input type="password" id="github-token" placeholder="Token de acceso GitHub">
+            <small>Necesitas un token con permisos de repositorio. <a href="https://github.com/settings/tokens" target="_blank">Obtener token</a></small>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
